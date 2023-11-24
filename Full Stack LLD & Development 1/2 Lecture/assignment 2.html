@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Survey Form</h1>
+    <section>
+      <form action="/signin" method="POST">
+        <!-- Name -->
+        <div>
+          <label id="name" for="name">Name</label>
+          <input id="name" placeholder="Your name" type="text" />
+        </div>
+        <!-- Age -->
+        <div>
+          <label id="age" for="age">Age :</label>
+          <input
+            id="age"
+            type="number"
+            placeholder="Your Age"
+            min="4"
+            max="20"
+          />
+        </div>
+        <!-- Gender (Radio btn)-->
+        <div>
+          <label>Gender :</label>
+
+          <input id="male" type="radio" value="Male" name="gender" />
+          <label id="male" for="male">Male</label>
+          <input id="female" type="radio" value="Female" name="gender" />
+          <label id="female" for="female">Female</label>
+        </div>
+        <!-- Favorite Food (Dropdown btn)-->
+        <div>
+          <label id="food">Favorite Food :</label>
+          <select id="food">
+            <option>Pizza</option>
+            <option>Chinese Food</option>
+            <option>Indian Food</option>
+          </select>
+        </div>
+        <!-- Do like to cook (Checkbox)-->
+        <div>
+          <label>Do you like to cook? </label>
+
+          <input id="cook" type="checkbox" name="cook" />
+          <label id="cook" for="cook">Yes</label>
+        </div>
+        <!-- Additional Comments (Textarea) -->
+        <div>
+          <label id="textarea" for="Comments">Additional Comments :</label>
+          <textarea id="textarea" name="Comments"></textarea>
+        </div>
+        <!-- Submit (Button) -->
+        <button id="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
