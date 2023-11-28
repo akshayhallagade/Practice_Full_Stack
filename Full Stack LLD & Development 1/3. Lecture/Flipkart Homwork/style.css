@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  /* padding: 0; */
+}
+header {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 100px;
+  background-color: blue;
+}
+nav .navbar {
+  width: 80%;
+  margin: auto;
+}
+ul {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  list-style-type: none;
+}
+
+/* nav .n */
+/* nav .navbar .navbar_items {
+  width: 160px;
+  color: white;
+  font-weight: 100;
+} */
