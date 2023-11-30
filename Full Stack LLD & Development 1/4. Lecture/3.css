@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  /* display: block; */
+  /* display: inline; */
+  display: inline-block;
+  /* float: left; */
+}
+
+.visual {
+  visibility: hidden;
+  /* display: none; */
+}
