@@ -4,15 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        background-color: #ccc;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+          "header header header header header"
+          "sidebar main main main ads"
+          "sidebar main main main ads"
+          "sidebar main main main ads"
+          "sidebar footer footer footer footer";
+      }
+      .header {
+        grid-area: header;
+        background-color: rgb(171, 171, 171);
+      }
+      .sidebar {
+        grid-area: sidebar;
+        background-color: rgb(115, 115, 115);
+      }
+      .main {
+        grid-area: main;
+        background-color: rgb(148, 114, 114);
+      }
+      .ads {
+        grid-area: ads;
+        background-color: rgb(113, 113, 183);
+      }
+      .footer {
+        grid-area: footer;
+        background-color: rgb(77, 31, 31);
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div class="header"></div>
-      <div class="sidebar"></div>
-      <div class="main"></div>
-      <div class="footer"></div>
-      <div class="ads"></div>
+      <div class="header">header</div>
+      <div class="sidebar">sidebar</div>
+      <div class="main">main</div>
+      <div class="ads">ads</div>
+      <div class="footer">footer</div>
     </div>
   </body>
 </html>
