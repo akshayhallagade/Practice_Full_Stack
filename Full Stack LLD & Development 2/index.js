@@ -1,4 +1,5 @@
-// console.log("adasdas");
-// console.log("Akshay")
-console.log(e);
-let e = 10;
+var name = "Akshay Hallagade";
+console.log(name);
+
+var name = "Tanay";
+console.log(name);
