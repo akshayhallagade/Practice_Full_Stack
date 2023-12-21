@@ -1,0 +1,13 @@
+const data = [
+  ["name", "Rajeev"],
+  ["city", "Bangalore"],
+  ["age", 20],
+];
+
+function convertIntoObj(arr) {
+  return arr.reduce(function (acc, item) {
+    acc[item[0]] = item[1];
+    return acc;
+  }, {});
+}
+console.log(convertIntoObj(data));
