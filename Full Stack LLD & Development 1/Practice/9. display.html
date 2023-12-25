@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: blueviolet;
+        /* flex  */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        /* gap: 20px; */
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        /* sets width   */
+        flex-basis: 100px;
+      }
+      .a {
+        /* increase widht of item to */
+        flex-grow: 2;
+      }
+      .b {
+        /* increase widht of item to */
+        flex-grow: 2;
+      }
+      .c {
+        /* increase widht of item to */
+        flex-grow: 5;
+        /* change order item  */
+        order: -1;
+        /* aling particular item to end*/
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child a">a</div>
+      <div class="child b">b</div>
+      <div class="child c">c</div>
+      <div class="child">d</div>
+      <div class="child">e</div>
+      <div class="child">f</div>
+      <div class="child">g</div>
+      <div class="child">h</div>
+    </div>
+  </body>
+</html>

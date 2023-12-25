@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 120vh;
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        float: left;
+      }
+      .static {
+        position: static;
+        background-color: cyan;
+        /* maintain-original-position */
+        /* scroll  */
+      }
+      .relative {
+        position: relative;
+        top: 10px;
+        left: 10px;
+        background-color: green;
+        /* maintain-original-position */
+        /* layer  */
+        /* tblr   */
+        /* scroll  */
+      }
+      .absolute {
+        position: absolute;
+        background-color: rgba(255, 0, 183, 0.776);
+        top: 20px;
+        left: 20px;
+        /* doenst maintain original position  */
+        /* went to (0,0) of the window  */
+        /* layers  */
+        /* tblr   */
+      }
+      .fixed {
+        position: fixed;
+        background-color: rgba(255, 0, 0, 0.801);
+        top: 40px;
+        left: 40px;
+        /* doesnt maintain original postion  */
+        /* fixed on window  */
+        /* no scroll  */
+        /* tblr  */
+        /* (0,0) of winodw  */
+        /* layer  */
+      }
+      .sticky {
+        position: sticky;
+        background-color: rgba(255, 255, 0, 0.745);
+        position: sticky;
+        top: 10px;
+        /* stick to winodw  */
+        /* tblr  */
+        /* scroll to certaine distance  */
+        /* layer  */
+      }
+      /* .inherit {
+        position: inherit;
+        background-color: cyan;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="child static">Static</div>
+    <div class="child relative">Realtive</div>
+    <div class="child absolute">Absolute</div>
+    <div class="child fixed">Fixed</div>
+    <div class="child sticky">Sticky</div>
+    <div class="child inherit">Inherit</div>
+  </body>
+</html>
