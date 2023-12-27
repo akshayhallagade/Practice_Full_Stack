@@ -16,7 +16,7 @@ const sum1 = function (a, b) {
 const compute = function (cb) {
   return cb(10, 20);
 };
-console.log(compute(sum1));
+compute(sum1);
 
 // .............................................
 // Property 3 : Return function from another Function.
@@ -54,6 +54,7 @@ console.log(generateCurd(10));
 // ...................................................................................
 // .............................Immutibility .........................................
 // ...................................................................................
+// - Immutibility means, a function shouldn't need to change the original array elements.
 
 // Mutating Function
 const getTotalBillAmount = (items) => {
@@ -66,12 +67,14 @@ const getTotalBillAmount = (items) => {
 };
 
 const bills = [100, 200, 100, 400];
+console.log(bills); // <---- Can see the chnage in orginal array and updated array.
 console.log(getTotalBillAmount(bills));
 
 // ......................................................
 // Non - Mutating Function
+// Note : to avoid not chnaging the original array due to a function. We always should pass the copy of array to the function.
 const getTotalBillAmount1 = (items) => {
-  bills1[0] = 200; // <---- This variable Mutating bills Function
+  bills1[0] = 200; // <---- This variable changing the array elements;
   let total = 0;
   for (let i = 0; i < items.length; i++) {
     total = total + items[i];
@@ -80,8 +83,9 @@ const getTotalBillAmount1 = (items) => {
 };
 
 const bills1 = [100, 200, 100, 400];
-console.log(getTotalBillAmount([...bills1])); // <-- Here, we are creating the copy of the array so that it will not mutate in the Function.
-console.log(getTotalBillAmount(bills1.slice())); // <-- Here, we are creating the copy of the array so that it will not mutate in the Function.
+console.log(bills);
+console.log(getTotalBillAmount([...bills1])); // <-- creating copy of bills and giving to function.
+console.log(getTotalBillAmount(bills1.slice())); // <-- creating copy of bills and giving to function.
 
 // ...................................................................................
 // ........................Higher Order Function......................................
