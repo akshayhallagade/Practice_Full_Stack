@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 60vh;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .child {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bomberman</h1>
+    <div class="container">
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="bomb"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="bomb"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="empty"></div>
+      <div class="child" data-bomb="bomb"></div>
+      <div class="child" data-bomb="empty"></div>
+    </div>
+    <script>
+      const childRef = document.querySelectorAll(".child"); // create objects list of all element of class child
+
+      // Traversing over all the elements.
+      childRef.forEach((element) => {
+        //setting event for all the elements.
+        element.addEventListener("click", function (event) {
+          const ref = event.target;
+          const attr = ref.getAttribute("data-bomb");
+          // // Game 1...................................
+          if (attr === "empty") {
+            ref.remove(); // removes element
+          } else {
+            window.alert("Quit Game"); //give alert
+          }
+
+          // // Games 2 ....................................
+          // if (attr === "empty") {
+          //   ref.style.backgroundColor = "green"; // removes element
+          // } else {
+          //   ref.style.backgroundColor = "red";
+          //   window.alert("Quit Game"); //give alert
+          // }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CALCULATOR</h1>
+    <form>
+      <input id="value1" type="number" value="3" /> X
+      <input id="value2" type="number" value="6" />
+      = <span id="answer"> 18 </span>
+    </form>
+    <script>
+      const value1Ref = document.getElementById("value1");
+      const value2Ref = document.getElementById("value2");
+      const answerRef = document.getElementById("answer");
+
+      function calculate(v1, v2) {
+        const value1 = v1.value;
+        const value2 = v2.value;
+        answerRef.innerText = value1 * value2;
+      }
+      value1Ref.addEventListener("change", function () {
+        // For every change of value1 calling the calculate().
+        calculate(value1Ref, value2Ref);
+      });
+      value2Ref.addEventListener("change", function () {
+        // For every change of value1 calling the calculate().
+        calculate(value1Ref, value2Ref);
+      });
+    </script>
+  </body>
+</html>
