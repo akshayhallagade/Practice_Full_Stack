@@ -1,0 +1,53 @@
+<!-- Example 1 : insert number 7 in the list at position.(before 8)
+Stpes............
+1. Create a element
+2. Add text into it. (text->"7")
+3. Add the newely created element at its location. -->
+
+<!-- Example 2 : append element)
+Stpes............
+1. Create a element
+2. Add text into it. (text->"7")
+3. Append element at its location. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Numbers</h1>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+    <script>
+      const ulRef = document.querySelector("ul");
+
+      // Adding Element before 8.
+      const newEleRef = document.createElement("li"); // Creating new element
+      newEleRef.innerText = "7"; // Adding text into new element.
+
+      const liRef = document.querySelector("ul li:nth-child(7)");
+      console.log(liRef);
+
+      ulRef.insertBefore(newEleRef, liRef); // Adding elements at the required position.
+
+      //............
+      // Appending element.
+      const newEleRef2 = document.createElement("li"); //creating new element.
+      newEleRef2.innerText = "11"; //Adding text into it.
+
+      ulRef.appendChild(newEleRef2); // Append element at its location.
+    </script>
+  </body>
+</html>

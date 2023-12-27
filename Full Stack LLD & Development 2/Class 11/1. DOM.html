@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Akshay</h1>
+      <p id="detailes">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex laboriosam
+        tempore, commodi deleniti id facilis nesciunt asperiores reprehenderit,
+        voluptatibus atque sunt. Reprehenderit laboriosam saepe ratione minima
+        sapiente ex vel, similique non necessitatibus molestias! Cumque tempora
+        corporis mollitia voluptatibus assumenda beatae vel eum quae eos aperiam
+        expedita veniam exercitationem, nulla accusantium corrupti repudiandae
+        nobis maxime cupiditate, officia autem magni ut necessitatibus natus?
+        Molestiae doloribus tenetur pariatur aperiam consequuntur nam adipisci
+        nobis, id et, similique quod, ratione quisquam assumenda. Accusantium
+        assumenda vero harum commodi iure! Omnis libero hic amet, aliquid in,
+        rem accusamus tempora, veritatis consequatur optio porro. Quidem iste
+        possimus recusandae.
+      </p>
+      <ul>
+        <li class="item">item 1</li>
+        <li class="item">item 2</li>
+        <li class="item">item 3</li>
+        <li class="item">item 4</li>
+        <li class="item">item 5</li>
+      </ul>
+    </div>
+
+    <!-- Reading commands of JS <---QuerySelectors  -->
+    <script>
+      const item1 = document.getElementById("h1");
+      console.log(item1);
+
+      const item2 = document.getElementsByClassName("item");
+      console.log(item2);
+
+      const item3 = document.getElementById("detailes");
+      console.log(item3);
+
+      const item4 = document.querySelector("ul li");
+      console.log(item4);
+
+      const item5 = document.querySelectorAll("ul li");
+      console.log(item5);
+    </script>
+  </body>
+</html>
