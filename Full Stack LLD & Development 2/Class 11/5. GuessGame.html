@@ -1,3 +1,5 @@
+<!-- Game : Guess the box having green color. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,12 +49,14 @@
       <div class="child" data-color="green"></div>
     </div>
     <script>
-      const childRef = document.querySelectorAll(".child");
+      const childRef = document.querySelectorAll(".child"); //returns list of elements
 
       childRef.forEach((element) => {
+        //running loop over list.
         element.addEventListener("click", function (event) {
+          //adding event for every child.
           const ref = event.target;
-          const attr = ref.getAttribute("data-color");
+          const attr = ref.getAttribute("data-color"); // Taking attribute value
           ref.style.backgroundColor = attr;
         });
       });

@@ -33,19 +33,19 @@
 
     <!-- Reading commands of JS <---QuerySelectors  -->
     <script>
-      const item1 = document.getElementById("h1");
+      const item1 = document.getElementsByTagName("h1"); //returns list
       console.log(item1);
 
-      const item2 = document.getElementsByClassName("item");
+      const item2 = document.getElementsByClassName("item"); //returns list
       console.log(item2);
 
-      const item3 = document.getElementById("detailes");
+      const item3 = document.getElementById("detailes"); //return single element
       console.log(item3);
 
-      const item4 = document.querySelector("ul li");
+      const item4 = document.querySelector("ul li"); //top item
       console.log(item4);
 
-      const item5 = document.querySelectorAll("ul li");
+      const item5 = document.querySelectorAll("ul li"); //return items in list
       console.log(item5);
     </script>
   </body>
