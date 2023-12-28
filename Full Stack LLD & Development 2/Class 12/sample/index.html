@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="doubleHolder">
+      <button class="double">double</button>
+    </div>
+
+    <script>
+      // Write your JS program here =========
+      const parentRef = document.querySelector("#doubleHolder");
+
+      // creting new element
+      const newRef = document.createElement("button");
+      newRef.innerText = "double";
+      newRef.setAttribute("class", "double");
+
+      function findbtn() {
+        const ref = document.querySelectorAll(".double");
+
+        ref.forEach((ele) => {
+          ele.addEventListener("click", function (event) {
+            // event.target.remove();
+            parentRef.appendChild(newRef);
+            parentRef.appendChild(newRef);
+            parentRef.appendChild(newRef);
+            parentRef.appendChild(newRef);
+            parentRef.appendChild(newRef);
+            // findbtn();
+          });
+        });
+      }
+      findbtn();
+    </script>
+  </body>
+</html>
