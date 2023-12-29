@@ -1,0 +1,27 @@
+<!-- Write the preview of input value in search when we click "Enter".-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <input class="search" type="text" name="search" placeholder="Apple" />
+        <span class="preview"></span>
+      </div>
+    </div>
+    <script>
+      const searchRef = document.getElementsByClassName("search")[0];
+      const previewRef = document.getElementsByClassName("preview")[0];
+
+      searchRef.addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+          previewRef.innerText = event.target.value;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,3 +1,4 @@
+<!-- Filter the cards by Categories ! -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -106,39 +107,25 @@
       <p class="price" data-category="comedy">Rs 200</p>
     </div>
 
-    <!-- <script>
-          const selectRef = document.querySelector('select');
-          selectRef.addEventListener('change', function(event) {
-              console.log(event.target.value);
-              filterCard(event.target.value);
-          });
-  
-          function filterCard(filterName) {
-              const pricesRef = document.querySelectorAll('p.price');
-              console.log(pricesRef);
-  
-              pricesRef.forEach((priceRef) => {
-                  const category = priceRef.getAttribute('data-category');
-                  priceRef.parentElement.style.display = 'block';
-                  if (filterName !== category) {
-                      console.log(priceRef);
-                      priceRef.parentElement.style.display = 'none';
-                  }
-              })
-          }
-      </script> -->
-
     <!-- Filter the cards by Categories ! -->
     <script>
-      // Filter by Category
-      const selectCategory = document.querySelector("select");
+      const selectCategory = document.querySelector("select"); // Taking the value of select tag
+      // If the value got change call the function to filter data.
       selectCategory.addEventListener("change", function (event) {
-        console.log(event.target.value);
         filterCard(event.target.value);
       });
 
-      function filterCard() {
-        const cardRef = docuement.querySelector("movies p");
+      //Traverse over all the card and change its display type to none if dont match to select value.
+      function filterCard(val) {
+        const cardRef = document.querySelectorAll(".movies p");
+        //Traversing
+        cardRef.forEach((ele) => {
+          const attr = ele.getAttribute("data-category");
+          ele.parentElement.style.display = "block";
+          if (attr != val) {
+            ele.parentElement.style.display = "none"; // parentElement used to select Parent Element of current Element.
+          }
+        });
       }
     </script>
   </body>
