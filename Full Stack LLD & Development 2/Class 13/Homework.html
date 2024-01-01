@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="all">Remove All</button>
+    <ul>
+      <li>
+        <p>Task - 1</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 2</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 3</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 4</p>
+        <button>delete</button>
+      </li>
+    </ul>
+    <script>
+      // Write your JS program here =========
+
+      const removeRef = document.querySelector("#all");
+      const ulRef = document.querySelector("ul");
+      const liRef = document.querySelectorAll("li");
+      const liButtons = document.querySelectorAll("li button");
+
+      // Remove Indivisual
+      liButtons.forEach((ele) => {
+        ele.addEventListener("click", function (event) {
+          ele.parentElement.style.display = "none";
+        });
+      });
+
+      // Remove all
+      removeRef.addEventListener("click", function (event) {
+        ulRef.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
