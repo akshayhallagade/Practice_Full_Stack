@@ -22,7 +22,7 @@ addRef.addEventListener("click", function () {
 function createCard(taskCategory, taskId, taskDetails) {
   const newCard = document.createElement("div");
   newCard.className = "card";
-  newCard.innerHTML = `<div class="card-category '${taskCategory}'"></div> <div class="card-id">${taskId}</div><div class="card-detailes">${taskDetails}</div>.`;
+  newCard.innerHTML = `<div class="card-category ${taskCategory}"></div> <div class="card-id">${taskId}</div><div class="card-detailes">${taskDetails}</div>.`;
   return newCard;
 }
 
@@ -35,5 +35,6 @@ modalTextRef.addEventListener("keydown", function (event) {
     cardsCollectionRef.append(createCard(taskCategory, taskId, taskDetails));
     console.log("Enter is hitted.");
     toggleModal();
+    event.target.value = "";
   }
 });
