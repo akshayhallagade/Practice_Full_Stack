@@ -6,6 +6,7 @@ const modalRef = document.querySelector(".modal");
 const modalTextRef = document.querySelector(".modal .modal-left textarea");
 const cardDetailesRef = document.querySelectorAll(".card-detailes");
 
+// Toggle Modal
 function toggleModal() {
   if (modalRef.classList.contains("hide")) {
     modalRef.classList.remove("hide");
