@@ -27,5 +27,34 @@
         <div class="child">Child</div>
       </div>
     </div>
+    <script>
+      // Bubble Event Phase
+      const grandParentRef = document.querySelector(".grandparent");
+      grandParentRef.addEventListener("click", function (event) {
+        alert("grandParent Printed");
+      });
+      const parentRef = document.querySelector(".parent");
+      parentRef.addEventListener("click", function (event) {
+        alert("Parent Printed");
+      });
+      const childRef = document.querySelector(".child");
+      childRef.addEventListener("click", function (event) {
+        alert("Child Printed");
+      });
+      const documentRef = document.querySelector("document");
+      document.addEventListener("click", function (event) {
+        alert("Document Printed");
+      });
+
+      // Chase Event Phase  ==> This will print at first
+      const parentPhaseRef = document.querySelector(".parent");
+      parentPhaseRef.addEventListener(
+        "click",
+        function (event) {
+          alert("Chase Parent Got Printed");
+        },
+        (capture = true)
+      );
+    </script>
   </body>
 </html>

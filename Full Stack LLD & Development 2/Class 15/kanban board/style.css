@@ -113,6 +113,7 @@ main {
   position: absolute;
   bottom: 4px;
   right: 10px;
+  cursor: pointer;
 }
 
 /*........................ Modal  ...................*/
@@ -147,6 +148,7 @@ main {
   background-color: transparent;
   border: none;
   outline: none;
+  resize: none;
 }
 .modal-right {
   display: flex;
