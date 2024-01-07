@@ -3,23 +3,37 @@ const crossRef = document.querySelector(".cross");
 const cardsCollectionRef = document.querySelector(".cardsCollection");
 const modalRef = document.querySelector(".modal");
 const modalTextRef = document.querySelector(".modal .modal-left textarea");
+const categoryFilterRef = document.querySelectorAll(".groupCategory .category");
 const selectCategoryRef = document.querySelectorAll(".modal-right .category");
 
-const tasks = [];
+const tasks = [
+  {
+    Id: "dGSUFjfiq",
+    Details: "This is task 1 (lightgreen)",
+    Category: "c1",
+  },
+  {
+    Id: "ay8dQS0o1",
+    Details: "This is task 2 (black)",
+    Category: "c2",
+  },
+  {
+    Id: "fOqBFgQtx",
+    Details: "This is task 3 (lightblue)",
+    Category: "c3",
+  },
+  {
+    Id: "fOqBFgQtx",
+    Details: "This is task 4 (lightpink)",
+    Category: "c4",
+  },
+];
+
+tasks.forEach((task) => createCard(task));
 
 // ............................................................
 // ..........................Home..............................
 // ............................................................
-// Toggle Modal View
-function toggleModal() {
-  if (modalRef.classList.contains("hide")) {
-    modalRef.classList.remove("hide");
-    categoryEvents();
-    defaultSelectCategory();
-  } else {
-    modalRef.classList.add("hide");
-  }
-}
 // Working of Create task Button
 addRef.addEventListener("click", function () {
   toggleModal();
@@ -43,6 +57,29 @@ function deleteCard(newCard, newTask) {
     const selectedTaskRef = tasks.findIndex((task) => task.Id === newTask.Id);
     tasks.splice(selectedTaskRef, 1); //removing Card from Array
     console.log(tasks); //
+  });
+}
+
+// Filter Data
+function toggleSelectedGroupCategory(value) {
+  if (value.classList.contains("selected")) {
+    value.classList.remove("selected");
+  } else {
+    removeSelectedGroupAllCategory();
+    value.classList.add("selected");
+  }
+}
+
+categoryFilterRef.forEach(function (category) {
+  category.addEventListener("click", function (event) {
+    toggleSelectedGroupCategory(event.target);
+  });
+});
+
+//remove all the selected Category
+function removeSelectedGroupAllCategory() {
+  categoryFilterRef.forEach(function (category) {
+    category.classList.remove("selected");
   });
 }
 // .........................................................
@@ -69,8 +106,18 @@ modalTextRef.addEventListener("keydown", function (event) {
 //.................................................................
 // ...........................Modal................................
 //.................................................................
+// Toggle Modal View
+function toggleModal() {
+  if (modalRef.classList.contains("hide")) {
+    modalRef.classList.remove("hide");
+    setNewTaskCategory();
+    defaultSelectCategory();
+  } else {
+    modalRef.classList.add("hide");
+  }
+}
 // Select Category
-function categoryEvents() {
+function setNewTaskCategory() {
   selectCategoryRef.forEach(function (category) {
     category.addEventListener("click", function (event) {
       removeSelectedFromALL(); //removing selected categories
