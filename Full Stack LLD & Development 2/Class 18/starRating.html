@@ -73,43 +73,39 @@
       // 1. .stars .star
       const starRef = document.querySelectorAll(".stars .star");
       // 2. .rating span
+      const resultRef = document.querySelector(".rating span");
 
       // Method :
-      // 1. AddEventLister to star
+      // 1. AddEventLister
+      //    1a. AddEventLister -> mouseover
+      //    1b. AddEventLister -> mouseout
+      //    1c. AddEventLister -> click
       let rate = 0;
       starRef.forEach(function (ele) {
         ele.addEventListener("mouseover", function (event) {
-          console.log("print");
-          //   const targetElement = event.target;
-          //   if (targetElement.classList.contains("fa-star")) {
-          //   const num = targetElement.dataset.id;
-          //   fillup(num);
-          //   }
+          const targetElement = event.target;
+          const num = targetElement.dataset.id;
+          fillColor(num);
         });
-        // ele.addEventListener("click", function (event) {
-        //   const targetElement = event.target;
-        //   if (targetElement.classList.contains("fa-star"))
-        //     rate = event.target.value;
-        //   console.log(rate);
-        // });
-        // ele.addEventListener("mouseout", function (event) {
-        //   //   const targetElement = event.target;
-        //   //   if (targetElement.classList.contains("fa-star")) {
-        //   fillup(rate);
-        //   //   }
-        // });
+        ele.addEventListener("mouseout", function (event) {
+          fillColor(rate);
+        });
+        ele.addEventListener("click", function (event) {
+          rate = event.target.dataset.id;
+          resultRef.innerText = `${rate}`;
+        });
       });
-      //   fillup(rate);
 
-      //   function fillup(value) {
-      //     const starIconRef = document.querySelectorAll(".stars .star i");
-      //     starIconRef.forEach((ele) => {
-      //       if (ele.dataset.id <= value)
-      //         ele.classList.replace("fa-regular", "fa-solid");
-      //       else ele.classList.replace("fa-solid", "fa-regular");
-      //     });
-      //   }
       // 2. Turn fa-regular to fa-solid
+      function fillColor(value) {
+        const starIconRef = document.querySelectorAll(".stars .star i");
+        // change color
+        starIconRef.forEach((ele) => {
+          if (ele.dataset.id <= value)
+            ele.classList.replace("fa-regular", "fa-solid");
+          else ele.classList.replace("fa-solid", "fa-regular");
+        });
+      }
     </script>
   </body>
 </html>
