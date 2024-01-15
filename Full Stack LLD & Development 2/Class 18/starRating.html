@@ -14,6 +14,7 @@
       * {
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
       }
       body {
         width: 100vw;
@@ -82,17 +83,21 @@
       //    1c. AddEventLister -> click
       let rate = 0;
       starRef.forEach(function (ele) {
-        ele.addEventListener("mouseover", function (event) {
-          const targetElement = event.target;
-          const num = targetElement.dataset.id;
-          fillColor(num);
-        });
-        ele.addEventListener("mouseout", function (event) {
-          fillColor(rate);
-        });
         ele.addEventListener("click", function (event) {
-          rate = event.target.dataset.id;
-          resultRef.innerText = `${rate}`;
+          if (event.target.classList.contains("fa-star")) {
+            rate = event.target.dataset.id;
+            resultRef.innerText = `${rate}`;
+          }
+        });
+        ele.addEventListener("mouseover", function (event) {
+          if (event.target.classList.contains("fa-star")) {
+            const targetElement = event.target;
+            const num = Number(targetElement.dataset.id);
+            fillColor(num);
+          }
+        });
+        ele.addEventListener("mouseleave", function (event) {
+          fillColor(rate);
         });
       });
 
