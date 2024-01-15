@@ -37,10 +37,7 @@ function createTicket(ticketTask, ticketColor, ticketID) {
 
   ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
          <div class="ticket-id">${id}</div>
-         <div class="task-area">${ticketTask}</div>
-         <div class="ticket-lock">
-         <button>Locked</button>
-        </div>`;
+         <div class="task-area">${ticketTask}</div>`;
 
   let mainCont = document.querySelector(".main-cont");
   mainCont.append(ticketCont);
@@ -50,24 +47,26 @@ function createTicket(ticketTask, ticketColor, ticketID) {
     localStorage.setItem("tickets", JSON.stringify(ticketsArr));
   }
 }
-
-// Edited ..............................
-
-// Event Listener for all Buttons.
-const ticketLockRef = document.querySelectorAll(".ticket-lock button");
-ticketLockRef.forEach(function (lockRef) {
-  lockRef.addEventListener("click", function (event) {
-    const ticketContRef = lockRef.closest(".ticket-cont");
-    const textAreaRef = ticketContRef.querySelector(".task-area");
-
-    if (event.target.innerText === "Locked") {
-      event.target.innerText = "Unlocked";
-      textAreaRef.contentEditable = "true";
-      lockRef.parentElement.classList.replace("ticket-lock", "ticket-unlock");
-    } else if (event.target.innerText === "Unlocked") {
-      event.target.innerText = "Locked";
-      textAreaRef.contentEditable = "false";
-      lockRef.parentElement.classList.replace("ticket-unlock", "ticket-lock");
-    }
+// ....................................................
+// ................My Code................
+// ....................................................
+const crossbuttonRef = document.querySelector(".remove-btn img");
+var flag = false;
+crossbuttonRef.addEventListener("click", function () {
+  if (flag) {
+    crossbuttonRef.parentElement.style.backgroundColor = "inherit";
+    flag = false;
+  } else {
+    flag = true;
+    alert("delete button has been activated.");
+    crossbuttonRef.parentElement.style.backgroundColor = "red";
+  }
+});
+// function deleteFunction(flag) {
+const deleteTicketRef = document.querySelectorAll(".ticket-cont");
+deleteTicketRef.forEach((ticket) => {
+  ticket.addEventListener("click", function (event) {
+    if (flag) ticket.remove();
   });
 });
+// }
