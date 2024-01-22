@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .progress-wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .outer-boundary {
+        padding: 2px;
+        border: 1px solid black;
+      }
+      .bar {
+        width: 500px;
+        height: 40px;
+      }
+      .progress {
+        height: 100%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-wrapper">
+      <div class="outer-boundary">
+        <div class="bar">
+          <div class="progress" style="width: 0px"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const intervalRef = setInterval(() => {
+        //getMaxWidht Possible
+        const barRef = document.querySelector(".bar");
+        const widhtRef = getComputedStyle(barRef)["width"];
+        const maxWidht = Number(widhtRef.split("px")[0]);
+
+        //getMaxWidht Possible
+        const progressRef = document.querySelector(".bar .progress");
+        let currentWidth = Number(progressRef.style.width.split("px")[0]);
+        console.log(currentWidth);
+
+        //update the widht of progress-bar
+        if (currentWidth < maxWidht) {
+          progressRef.style.width = currentWidth + 10 + "px";
+        } else {
+          clearInterval(intervalRef);
+        }
+      }, 500);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Async Task will get executed at last.  -->
+    <!-- According to time give to asyn task it will print at last.  -->
+    <h1>Example 4</h1>
+    <script>
+      console.log("1");
+      console.log("2");
+      setTimeout(() => {
+        console.log("3");
+      }, 3000);
+      setTimeout(() => {
+        console.log("4");
+      }, 1000);
+      for (let i = 10; i < 13; i++) {
+        console.log(i);
+      }
+      console.log("5");
+    </script>
+  </body>
+</html>

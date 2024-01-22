@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* .comment-box {
+        margin: 10px;
+      } */
+
+      .comment-detailes {
+        margin: 10px;
+        padding: 5px 10px;
+        background-color: aqua;
+        border-radius: 8px;
+      }
+      .comment-reply {
+        margin-left: 30px;
+      }
+      /* .comment-input {
+        margin-left: 10px;
+      } */
+      .comment-input input {
+        height: 35px;
+        width: 200px;
+        font-size: 15px;
+        padding-left: 8px;
+        outline: none;
+      }
+      .comment-input button {
+        font-size: 17px;
+        padding: 5px;
+      }
+      .comment-detailes h3 {
+        font-size: 20px;
+      }
+      .comment-detailes a {
+        font-size: 15px;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="comment-wrapper">
+      <div class="comment-box">
+        <div class="comment-detailes">
+          <h3>First Commentor</h3>
+          <a>Add Reply</a>
+        </div>
+        <div class="comment-reply"></div>
+      </div>
+    </div>
+    <script>
+      // 1. Create text form
+      // 3. Add it to desired location.
+      // 4. create comment-box as per the text in form.
+      // 5. Add the comment to the its position.
+
+      addEvent();
+
+      // First time run only.
+      function addEvent() {
+        const replyRef = document.querySelectorAll(".comment-detailes a");
+        replyRef.forEach((ele) => {
+          ele.addEventListener("click", (e) => {
+            // Get Location to add Comment and Form
+            const locationRef = e.target.parentElement.nextElementSibling;
+            // console.log(locationRef);
+            createCommentForm(locationRef);
+          });
+        });
+      }
+
+      function createCommentBox(ref, text) {
+        // 1. Create comment
+        const newCommentRef = document.createElement("div");
+        newCommentRef.classList.add("comment-box");
+        newCommentRef.innerHTML = `
+            <div class="comment-detailes">
+                <h3>${text}</h3>
+                <a>Add Reply</a>
+            </div>
+            <div class="comment-reply"></div>`;
+        // 2. Add to the location.
+        ref.appendChild(newCommentRef);
+        newCommentRef.addEventListener("click", function (event) {
+          if (event.target.nodeName == "A") {
+            const locationRef = newCommentRef.querySelector(".comment-reply");
+            createCommentForm(locationRef);
+          }
+        });
+      }
+
+      function createCommentForm(ref) {
+        // 1. Create btn
+        const newFormRef = document.createElement("div");
+        newFormRef.classList.add("comment-input");
+        newFormRef.innerHTML = `
+        <input type="text" placeholder="Write reply." />
+        <button>Submit</button>
+        `;
+        // 2. Add to the location
+        ref.appendChild(newFormRef);
+
+        // 3. Create AddEvent for button.
+        const buttonRef = newFormRef.querySelector("button");
+        buttonRef.addEventListener("click", function (e) {
+          const nearestReplyRef = e.target.parentElement.parentElement;
+          const ReplyInput = e.target.parentElement;
+          const valueRef = e.target.previousElementSibling.value;
+          console.log(nearestReplyRef, ReplyInput, valueRef);
+          createCommentBox(nearestReplyRef, valueRef);
+          ReplyInput.remove();
+        });
+      }
+    </script>
+  </body>
+</html>
