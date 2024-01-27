@@ -9,22 +9,15 @@
         margin: 0;
         padding: 0;
       }
-
       .container {
         width: 100vw;
         height: 100vh;
         display: grid;
         grid-template-areas:
-          "header header header header header"
-          "sidebar main main main ads"
-          "sidebar main main main ads"
-          "sidebar main main main ads"
-          "footer footer footer footer footer";
-      }
-      .container div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+          " header header header header header "
+          " sidebar main main main ads "
+          " sidebar main main main ads "
+          " sidebar footer footer footer footer ";
       }
       .header {
         grid-area: header;
@@ -32,19 +25,19 @@
       }
       .sidebar {
         grid-area: sidebar;
-        background-color: brown;
+        background-color: red;
       }
       .main {
         grid-area: main;
-        background-color: yellow;
+        background-color: green;
       }
       .ads {
         grid-area: ads;
-        background-color: blueviolet;
+        background-color: blue;
       }
       .footer {
         grid-area: footer;
-        background-color: green;
+        background-color: yellow;
       }
     </style>
   </head>

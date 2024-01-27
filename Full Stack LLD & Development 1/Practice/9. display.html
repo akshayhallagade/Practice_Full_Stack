@@ -16,10 +16,11 @@
         /* flex  */
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        /* gap: 20px; */
+        align-content: center;
+        gap: 10px;
       }
       .child {
         width: 100px;
@@ -27,6 +28,7 @@
         border: 1px solid black;
         /* sets width   */
         flex-basis: 100px;
+        /* flex-shrink: 10px; */
       }
       .a {
         /* increase widht of item to */
@@ -42,7 +44,8 @@
         /* change order item  */
         order: -1;
         /* aling particular item to end*/
-        align-self: flex-end;
+        align-self: center;
+        flex-shrink: 1;
       }
     </style>
   </head>
