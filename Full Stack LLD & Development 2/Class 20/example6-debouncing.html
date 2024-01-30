@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Debouncing</h1>
+    <input type="text" placeholder="Enter Name...." />
+    <script>
+      function debouncing() {
+        let timeoutRef;
+        return function (e) {
+          clearTimeout(timeoutRef);
+          timeoutRef = setTimeout(() => {
+            console.log(e.target.value);
+          }, 1000);
+        };
+      }
+
+      const inputRef = document.querySelector("input");
+      inputRef.addEventListener("keyup", debouncing());
+    </script>
+  </body>
+</html>

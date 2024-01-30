@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Throtting</h1>
+    <input type="text" placeholder="Enter Name ...." />
+
+    <script>
+      function throttling() {
+        let flag = true;
+        return function (e) {
+          if (flag) {
+            flag = false;
+            setTimeout(() => {
+              console.log(e.target.value);
+              flag = true;
+            }, 1000);
+          }
+        };
+      }
+
+      const inputRef = document.querySelector("input");
+      inputRef.addEventListener("keyup", throttling());
+    </script>
+  </body>
+</html>
