@@ -26,9 +26,11 @@
 //   console.log("A");
 // }
 // console.tog("B");
+
 // setTimeout(function () {
 //   console.log("C");
 // }, 0);
+// // This Code will crash - Infinite loop
 
 // ..........................
 // // Example 4
@@ -41,17 +43,17 @@
 // }
 // console.log("B");
 
-// // ..........................
-// Example 5
-setTimeout(function () {
-  console.log("A");
-}, 0);
-setTimeout(function () {
-  console.log("B");
-}, 0);
-setTimeout(function () {
-  console.log("C");
-}, 0);
-setTimeout(function () {
-  console.log("D");
-}, 0);
+// // // ..........................
+// // Example 5
+// setTimeout(function () {
+//   console.log("A");
+// }, 0);
+// setTimeout(function () {
+//   console.log("B");
+// }, 0);
+// setTimeout(function () {
+//   console.log("C");
+// }, 0);
+// setTimeout(function () {
+//   console.log("D");
+// }, 0);
