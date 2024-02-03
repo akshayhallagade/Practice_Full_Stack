@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-// Example 1 -- Here, readFile is a
+// Example 1 -- Here, readFile is a async function.
 console.log("Start");
 fs.readFile("f1.txt", function (err, data) {
   if (err) console.log(err);

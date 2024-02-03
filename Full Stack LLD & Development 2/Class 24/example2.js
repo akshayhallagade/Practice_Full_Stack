@@ -58,7 +58,7 @@
 
 // Question 5:
 // Write a function countdownWithClear that takes a positive integer n as an argument.
-// The function should tog the numbers from n down to 1, with a delay of milliseconds
+// The function should log the numbers from n down to 1, with a delay of milliseconds
 // between each log. However, the function should stop logging after 5 seconds
 // (i.e., when it has logged n, n-1, n 5).
 
