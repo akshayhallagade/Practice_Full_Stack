@@ -126,14 +126,33 @@ const arr = {
   limit: 30,
 };
 
-const myFetch = function () {
+// // Question 1
+// const myFetch = function () {
+//   return new Promise(function (resolve, reject) {
+//     // Write logic
+//     setTimeout(() => {
+//       if (arr.todos != null) resolve(arr.todos);
+//       else reject("Not Data Avail !");
+//     }, 1000);
+//   });
+// }; // Return todo data after 10sec
+// myFetch()
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// ..............................................
+// Question 2
+// Find the Id is present in the code or not.
+const myFetch = function (id) {
   return new Promise(function (resolve, reject) {
     // Write logic
-    setTimeout(() {
-        if (data !=null) resolve
-    });
+    setTimeout(() => {
+      let found = arr.todos.find((todo) => todo.id === id);
+      if (found) resolve(found);
+      else reject("Not Data Avail !");
+    }, 2000);
   });
 }; // Return todo data after 10sec
-myFetch()
+myFetch(id)
   .then((data) => console.log(data))
   .catch((err) => console.log(err));
