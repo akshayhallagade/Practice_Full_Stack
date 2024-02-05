@@ -126,33 +126,33 @@ const arr = {
   limit: 30,
 };
 
-// // Question 1
-// const myFetch = function () {
-//   return new Promise(function (resolve, reject) {
-//     // Write logic
-//     setTimeout(() => {
-//       if (arr.todos != null) resolve(arr.todos);
-//       else reject("Not Data Avail !");
-//     }, 1000);
-//   });
-// }; // Return todo data after 10sec
-// myFetch()
-//   .then((data) => console.log(data))
-//   .catch((err) => console.log(err));
+// .............................................
+// Question 1
+// Show all the data.
+const myFetch1 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    if (arr.todos != null) resolve(arr.todos);
+    else reject("No Data Present !");
+  }, 2000);
+});
+
+myFetch1.then((data) => console.log(data)).catch((err) => console.log(err));
 
 // ..............................................
 // Question 2
 // Find the Id is present in the code or not.
-const myFetch = function (id) {
+const myFetch2 = function (id) {
   return new Promise(function (resolve, reject) {
     // Write logic
-    setTimeout(() => {
-      let found = arr.todos.find((todo) => todo.id === id);
-      if (found) resolve(found);
-      else reject("Not Data Avail !");
+    setTimeout(function () {
+      var availId = arr.todos.find((todo) => todo.id === id);
+      if (availId) resolve(availId);
+      else reject("Not Available");
     }, 2000);
   });
-}; // Return todo data after 10sec
-myFetch(id)
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+};
+
+myFetch2(4).then(
+  (data) => console.log(data),
+  (err) => console.log(err)
+);
