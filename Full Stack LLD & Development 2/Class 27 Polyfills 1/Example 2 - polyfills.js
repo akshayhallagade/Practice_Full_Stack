@@ -60,7 +60,7 @@ output;
 // });
 // output;
 
-// // ....... Polyfill for the Filter().........
+// // // ....... Polyfill for the Filter().........
 // if (!Array.prototype.myFilter) {
 //   Array.prototype.myFilter = function (callback) {
 //     const output = [];
@@ -71,7 +71,7 @@ output;
 //     return output;
 //   };
 // }
-// // // // ........working of myFilter polyfill ............
+// // ........working of myFilter polyfill ............
 // const arr = ["str", "pika", "akshay"];
 // const output = arr.myFilter((ele) => {
 //   return ele.includes("a");
