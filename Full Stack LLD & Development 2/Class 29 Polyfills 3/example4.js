@@ -1,0 +1,1 @@
+// Polyfill for reduce method.

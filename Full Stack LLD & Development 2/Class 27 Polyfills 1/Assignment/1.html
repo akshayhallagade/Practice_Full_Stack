@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   <!-- Write your code solution here, inside the map function -->
+      //   <!-- WARNING: Don't make any changes outside the given function. (would fail test cases)
+      // Write the required code and return the correct answer. -->
+      // < id='solution' defer>
+      function map(arr, callback) {
+        // Write your solution here ========================
+        if (!Array.prototype.map) {
+          Array.prototype.myMap = function (callback) {
+            const output = [];
+            for (var i = 0; i < this.length; i++) {
+              output.push(callback(this[i], i, this));
+            }
+            return output;
+          };
+        }
+      }
+    </script>
+  </body>
+</html>

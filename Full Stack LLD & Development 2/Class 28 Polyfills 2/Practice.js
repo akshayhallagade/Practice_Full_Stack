@@ -64,54 +64,139 @@
 // example1();
 //...........................
 
-// // Question 11
-var cc = 20;
-function example1() {
-  if (true) {
-    var cc = 1; // var is function scope
-  }
-  console.log(cc); // 20
-}
-example1();
-console.log(cc); // 20
+// // // Question 11
+// var cc = 20;
+// function example1() {
+//   if (true) {
+//     var cc = 1; // var is function scope
+//   }
+//   console.log(cc); // 20
+// }
+// example1();
+// console.log(cc); // 20
 //...........................
 
+// // Question 12
+// var dd = 20;
+// function example1() {
+//   if (true) {
+//     dd = 1; // var is function scope
+//   }
+//   console.log(dd); // 1
+// }
+// example1();
+// console.log(dd); // 1  // Coz, Outer varible got updated.
+//...........................
+
+// // // Question 13
+// function parent() {
+//   var a = 20;
+//   function child() {
+//     console.log(a); // 20
+//   }
+//   child();
+// }
+// parent();
+//...........................
+
+// // // Question 14a
+// function parent1() {
+//   var a = 20;
+//   function child() {
+//     console.log(a);
+//     function child2() {
+//       console.log(a);
+//     }
+//   }
+//   child2(); // error : ReferenceError
+// }
+// parent1();
+// //...........................
+
+// // // Question 14b
 // function parent2() {
 //   var a = 20;
 //   function child() {
-//     console.log(a); // A.
+//     console.log(a); // 20
 //     function child2() {
-//       console.log(a); // B.
+//       console.log(a); // 20
+//     }
+//     child2();
+//   }
+//   child();
+// }
+// parent2();
+//...........................
+
+// // Question 15
+// function parent2() {
+//   var a = 20;
+//   function child() {
+//     console.log(a); // undefined
+//     function child2() {
+//       console.log(a); // 10
 //     }
 //     var a = 10;
 //     child2();
 //   }
 //   child();
-//   console.log(a);
+//   console.log(a); //20
 // }
 // parent2();
+//...........................
 
+// // // Question 16
 // function parent3() {
 //   var a = 20;
 //   function child() {
-//     console.log(a); // A.
+//     console.log(a); // 20
 //     function child2() {
-//       console.log(a); // B.
+//       console.log(a); // undefined
 //       var a = 30;
 //     }
 //     a = 10;
 //     child2();
 //   }
 //   child();
-//   console.log(a);
+//   console.log(a); //10
 // }
 // parent3();
+// //...........................
 
-// let c = 0;
-// function counter() {
-//   c = c + 1;
-//   console.log(c);
+// // // Question 17
+// function parent4() {
+//   var a = 20;
+//   function child() {
+//     let a = 10;
+//     console.log(a); // 10
+//     function child2() {
+//       console.log(a); // 10
+//       a = 30;
+//     }
+//     console.log(a); // 10
+//     child2();
+//   }
+//   child();
+//   console.log(a); //20
 // }
-// counter();
-// counter();
-// counter();
+// parent4();
+// //...........................
+
+// // Question 18
+function parent5() {
+  var a = 20;
+  function child() {
+    let a = 10;
+    console.log(a); // 10
+    function child2() {
+      console.log(a); //10
+      a = 30;
+    }
+    child2();
+    console.log(a); //30
+  }
+  child();
+  console.log(a); // 20
+}
+parent5();
+// //...........................

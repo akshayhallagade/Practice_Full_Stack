@@ -5,24 +5,24 @@
 //   output.push(newEle);
 // });
 
-// ....... Polyfill for the forEach().........
-if (!Array.prototype.myForEach) {
-  // Implement the logic for "forEach"
-  Array.prototype.myForEach = function (callback) {
-    const length = this.length;
-    for (var i = 0; i < length; i++) {
-      // Execute Callback --> callback(this[i],i,this)
-      callback(this[i], i, this);
-    }
-  };
-}
-// ........working of myFilter polyfill ............
-const output = [];
-const arr = [2, 4, 4, 5, 56];
-arr.myFilter((ele) => {
-  output.push(ele * 3);
-});
-output;
+// // ....... Polyfill for the forEach().........
+// if (!Array.prototype.myForEach) {
+//   // Implement the logic for "forEach"
+//   Array.prototype.myForEach = function (callback) {
+//     const length = this.length;
+//     for (var i = 0; i < length; i++) {
+//       // Execute Callback --> callback(this[i],i,this)
+//       callback(this[i], i, this);
+//     }
+//   };
+// }
+// // ........working of myFilter polyfill ............
+// const output = [];
+// const arr = [2, 4, 4, 5, 56];
+// arr.myFilter((ele) => {
+//   output.push(ele * 3);
+// });
+// output;
 // .......................................................................
 // //...........Normal Map Function ............
 // // const arr = [3, 4, 5, 6];
@@ -78,31 +78,28 @@ output;
 // });
 // output;
 // .........................................................................
-// // ..........Normal Reduce Function..........
-// const arr = [7, 2, 3, 5, 6];
-// const output = arr.reduce((total, ele) => {
-//   return total + ele;
+// // // ..........Normal Reduce Function..........
+// [7, 2, 3, 5, 6].reduce((accumulator, ele) => {
+//   return accumulator;
 // });
 // output;
 
-// // ..........Polyfill for the reduce..........
-// if (!Array.prototype.myReduce) {
-//   Array.prototype.myReduce = function (callback, initializer) {
-//     const output = [];
-//     let total = initializer != undefined ? initializer : 0;
-//     for (var i = 0; i < this.length; i++) {
-//       total = callback(total, this[i]);
-//       output.push(total);
-//     }
-//     return output;
-//   };
-// }
+// ..........Polyfill for the reduce..........
+if (!Array.prototype.myReduce) {
+  Array.prototype.myReduce = function (callback, initializer = 0) {
+    let total = initializer;
+    for (var i = 0; i < this.length; i++) {
+      total = callback(total, this[i], i, this);
+    }
+    return total;
+  };
+}
 
 // // // ........working of myReduce polyfill ............
-// const arr = [7, 2, 3, 5, 6];
-// const output = arr.myReduce((total, ele) => {
-//   return total + ele;
-// });
-// output;
-
+const arr = [7, 2, 3, 5, 6];
+const output = arr.myReduce((accumulator, ele) => {
+  accumulator += ele;
+  return accumulator;
+});
+console.log(output);
 // .........................................................................
