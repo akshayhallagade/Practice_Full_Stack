@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .counter-wrapper {
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+          padding: 15px 0;
+        }
+        .manipulators {
+          padding: 10px 0;
+        }
+        button {
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="counter-wrapper">
+      <h1>Number :<a>0</a></h1>
+      <input value="0" type="number" />
+      <div class="manipulators">
+        <button class="incrementer">+++</button>
+        <button class="decrementer">---</button>
+      </div>
+      <div>
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+    <script src="/Practice/2.script.js"></script>
+  </body>
+</html>
