@@ -45,3 +45,13 @@ const data = [
   ["age", 20],
 ];
 console.log(convertIntoObj(data));
+
+// ......................................
+// Another simplere way of writing
+
+const arr = [1, 2, 3, 4, 4, 5, 56, 6];
+const ans = arr.reduce((total, item) => {
+  total = total + item;
+  return total;
+}, 0);
+ans;

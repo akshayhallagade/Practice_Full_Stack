@@ -30,3 +30,6 @@ const getTotalBillAmount1 = (items) => {
 
 const bills1 = [100, 200, 100, 400];
 console.log(getTotalBillAmount1(bills1));
+
+// another way
+bills1.forEach((item) => console.log(item));

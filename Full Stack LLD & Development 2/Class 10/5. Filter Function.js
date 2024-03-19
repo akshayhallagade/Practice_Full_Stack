@@ -34,3 +34,10 @@ function convert4(item, ch) {
 
 const names4 = ["Atul", "Kavya", "Sandhiya"];
 console.log(convert3(names4, "y"));
+
+// .......................................
+// Another way
+const ans = names4.filter((item) => {
+  return item.includes("K");
+});
+console.log(ans);

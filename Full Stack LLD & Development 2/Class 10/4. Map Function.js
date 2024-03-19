@@ -43,3 +43,10 @@ function convert2(cd) {
 
 const names2 = ["Atul", "Kavya", "Sandhiya"];
 console.log(convert2(names2));
+
+// ------------------------------------------------
+// another simple way
+const ans = names2.map((item) => {
+  return item;
+});
+console.log(ans);

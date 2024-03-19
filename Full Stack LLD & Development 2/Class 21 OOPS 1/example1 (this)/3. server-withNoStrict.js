@@ -11,12 +11,12 @@ const obj = {
   name: "Akshay",
   id: 1,
   getThis: function () {
-    console.log(this);
+    return this;
   },
 };
-obj.getThis(); // obj
+console.log(obj.getThis()); // obj
 // ............................
 
 const getThisFn = obj.getThis;
-getThisFn(); // global
+console.log(getThisFn()); // global
 // ............................
