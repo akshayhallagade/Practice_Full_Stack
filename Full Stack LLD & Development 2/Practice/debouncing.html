@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+
+    <script>
+      // Debouncing
+      function debouncing(delay) {
+        let timer;
+        return function (e) {
+          clearInterval(timer);
+          timer = setTimeout(() => {
+            console.log(e.target.value);
+          }, delay);
+        };
+      }
+
+      // throttle
+      function throttle(delay) {
+        let flag = true;
+        return function (e) {
+          if (flag) {
+            flag = false;
+            setTimeout(() => {
+              console.log(e.target.value);
+              flag = true;
+            }, 1000);
+          }
+        };
+      }
+
+      const inputRef = document.getElementsByTagName("input")[0];
+      inputRef.addEventListener("keyup", throttle(2000));
+    </script>
+  </body>
+</html>

@@ -1,13 +1,12 @@
-console.log(this); //window
+// console.log(this); //window
 
-// ............................
+// // ............................
+// function text() {
+//   console.log(this); // window
+// }
+// text();
 
-function text() {
-  console.log(this); // window
-}
-text();
-
-// ............................
+// // ............................
 
 const obj = {
   name: "Akshay",
@@ -17,9 +16,9 @@ const obj = {
   },
 };
 obj.getThis(); // obj
-// ............................
+// // ............................
 
-const getThisFn = obj.getThis;
-getThisFn(); // Window
+// const getThisFn = obj.getThis;
+// getThisFn(); // Window
 
-// ............................
+// // ............................

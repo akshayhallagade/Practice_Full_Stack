@@ -8,6 +8,7 @@ function text() {
   console.log(this); // undefined
 }
 text();
+
 // ............................
 
 const obj = {
