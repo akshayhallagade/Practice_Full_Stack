@@ -1,0 +1,31 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/Practice/img/1.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.sect {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sect:hover {
+  background: rgba(169, 184, 189, 0.329);
+}

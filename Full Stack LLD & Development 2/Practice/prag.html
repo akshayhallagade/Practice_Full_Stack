@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="prag.css" /> -->
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("https://www.antiersolutions.com/wp-content/uploads/2023/12/GettyImages-1497715453-1.jpg ");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sect {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+      }
+      .sect:hover {
+        background: rgba(169, 184, 189, 0.329);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="sect"
+        data-img="https://www.antiersolutions.com/wp-content/uploads/2023/12/GettyImages-1497715453-1.jpg "
+      >
+        BlockChain
+      </div>
+      <div
+        class="sect"
+        data-img="https://www.antiersolutions.com/wp-content/uploads/2023/12/Group-1261152872.jpg "
+      >
+        Metaverse
+      </div>
+      <div
+        class="sect"
+        data-img="https://www.antiersolutions.com/wp-content/uploads/2023/12/1459532842-3.jpg"
+      >
+        Crypto
+      </div>
+      <div
+        class="sect"
+        data-img="https://www.antiersolutions.com/wp-content/uploads/2024/05/AIML.jpg"
+      >
+        Artificial Inteligence
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector(".container");
+        const sects = document.querySelectorAll(".sect");
+        sects.forEach((sec) => {
+          sec.style.backgroundImage = `url('${sec.dataset.img}')`;
+        });
+
+        sects.forEach((sect) => {
+          sect.addEventListener("mouseover", () => {
+            const imgUrl = sect.dataset.img;
+            container.style.backgroundImage = `url('${imgUrl}')`;
+            sects.forEach((indSec) => {
+              indSec.style.backgroundImage = "none";
+            });
+          });
+
+          sect.addEventListener("mouseout", () => {
+            sects.forEach((indSec) => {
+              indSec.style.backgroundImage = `url('${indSec.dataset.img}')`;
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

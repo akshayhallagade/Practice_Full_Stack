@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider-container {
+        width: 60%;
+        height: 100px;
+        padding: 10px;
+        background-color: rgb(163, 147, 147);
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid black;
+      }
+      .slider {
+        width: 80%;
+        border: 1px solid black;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .slider button {
+        padding: 10px;
+        width: 18%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="slider-container">
+        <div class="previous">Previous</div>
+        <div class="slider">
+          <button>click here</button>
+          <button>click here</button>
+          <button>click here</button>
+          <button>click here</button>
+          <button>click here</button>
+        </div>
+        <div class="next">Next</div>
+      </div>
+    </div>
+  </body>
+</html>
